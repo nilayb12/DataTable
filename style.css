@@ -1,0 +1,34 @@
+body {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+  h1 {
+      text-align: center;
+  }
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border-radius: 5px;
+    box-shadow: 0 0 12.5px white;
+    overflow: auto;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  th {
+    background: #00755e;
+    color: #ffffff;
+  }
+  
+  th,
+  td {
+    padding: 10px 20px;
+  }
+  
+  tr:nth-child(even) {
+    background: #252525;
+  }
+  
