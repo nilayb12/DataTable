@@ -47,6 +47,8 @@ function initDataTable() {
         scrollX: true,
         scrollY: (window.innerHeight / 2) + "px",
         dom: 'Bfrtip',
+        processing: true,
+        pagingType: "full_numbers",
         buttons: [
             'colvis',
             {
