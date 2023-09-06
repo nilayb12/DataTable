@@ -1,5 +1,4 @@
 const csvFileInput = document.querySelector("#csvFileInput");
-
 csvFileInput.addEventListener("change", (e) => {
     Papa.parse(csvFileInput.files[0], {
         complete: function(result) {
@@ -11,8 +10,7 @@ csvFileInput.addEventListener("change", (e) => {
 });
 
 function htmlTableGen(content) {
-    let csv_preview = document.getElementById('csvtable');
-
+    let csv_preview = document.getElementById('csvTable');
     let html = '<table id="tableData" class="table table-condensed table-hover table-striped" style="width:100%">';
 
     if (content.length == 0 || typeof(content[0]) === 'undefined') {
@@ -20,7 +18,6 @@ function htmlTableGen(content) {
     } else {
         const header = content[0];
         const data = content.slice(1);
-
         html += '<thead>';
         html += '<tr>';
         header.forEach(function(colData) {
@@ -29,7 +26,6 @@ function htmlTableGen(content) {
         html += '</tr>';
         html += '</thead>';
         html += '<tbody>';
-
         data.forEach(function(row) {
             if (header.length === row.length) {
                 html += '<tr>';
@@ -39,14 +35,9 @@ function htmlTableGen(content) {
                 html += '</tr>';
             }
         });
-
         html += '</tbody>';
         html += '</table>';
-
-        // insert table element into csv preview
         csv_preview.innerHTML = html;
-
-        // initialise DataTable
         initDataTable();
     }
 }
