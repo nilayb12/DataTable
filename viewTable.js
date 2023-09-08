@@ -1,3 +1,8 @@
+let prefers = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+let html = document.querySelector('html');
+html.classList.add(prefers);
+html.setAttribute('data-bs-theme', prefers);
+
 const csvFileInput = document.querySelector("#csvFileInput");
 csvFileInput.addEventListener("change", (e) => {
     Papa.parse(csvFileInput.files[0], {
