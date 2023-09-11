@@ -6,7 +6,7 @@ html.setAttribute('data-bs-theme', prefers);
 const csvFileInput = document.querySelector("#csvFileInput");
 csvFileInput.addEventListener("change", (e) => {
     Papa.parse(csvFileInput.files[0], {
-        complete: function(result) {
+        complete: function (result) {
             if (result.data && result.data.length > 0) {
                 htmlTableGen(result.data)
             }
@@ -18,23 +18,23 @@ function htmlTableGen(content) {
     let csv_preview = document.getElementById('csvTable');
     let html = '<table id="tableData" class="table table-condensed table-hover table-striped" style="width:100%">';
 
-    if (content.length == 0 || typeof(content[0]) === 'undefined') {
+    if (content.length == 0 || typeof (content[0]) === 'undefined') {
         return null
     } else {
         const header = content[0];
         const data = content.slice(1);
         html += '<thead>';
         html += '<tr>';
-        header.forEach(function(colData) {
+        header.forEach(function (colData) {
             html += '<th>' + colData + '</th>';
         });
         html += '</tr>';
         html += '</thead>';
         html += '<tbody>';
-        data.forEach(function(row) {
+        data.forEach(function (row) {
             if (header.length === row.length) {
                 html += '<tr>';
-                row.forEach(function(colData) {
+                row.forEach(function (colData) {
                     html += '<td>' + colData + '</td>';
                 });
                 html += '</tr>';
@@ -56,7 +56,9 @@ function initDataTable() {
         pagingType: "full_numbers",
         keys: true,
         searchPanes: {
-            layout: 'columns-2'
+            layout: 'columns-3',
+            initCollapsed: true,
+            cascadePanes: true
         },
         // responsive: true,
         buttons: [
