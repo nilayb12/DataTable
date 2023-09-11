@@ -50,10 +50,15 @@ function htmlTableGen(content) {
 function initDataTable() {
     $('#tableData').dataTable({
         scrollX: true,
-        scrollY: (window.innerHeight / 2) + "px",
-        dom: 'Bfrtip',
+        scrollY: (window.innerHeight / 1.75) + "px",
+        dom: 'PBlfrtip',
         processing: true,
         pagingType: "full_numbers",
+        keys: true,
+        searchPanes: {
+            layout: 'columns-2'
+        },
+        // responsive: true,
         buttons: [
             'colvis',
             {
