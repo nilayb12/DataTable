@@ -52,7 +52,7 @@ function initDataTable() {
         scrollX: true,
         scrollY: '75vh',
         scrollCollapse: true,
-        dom: 'PlBfirtp',
+        dom: 'PlBfritp',
         processing: true,
         pagingType: "full_numbers",
         keys: true,
