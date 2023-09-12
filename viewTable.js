@@ -16,7 +16,7 @@ csvFileInput.addEventListener("change", (e) => {
 
 function htmlTableGen(content) {
     let csv_preview = document.getElementById('csvTable');
-    let html = '<table id="tableData" class="table table-condensed table-hover table-striped" style="width:100%">';
+    let html = '<table id="tableData" class="table table-condensed table-hover table-striped cell-border" style="width:100%">';
 
     if (content.length == 0 || typeof (content[0]) === 'undefined') {
         return null
@@ -50,8 +50,9 @@ function htmlTableGen(content) {
 function initDataTable() {
     $('#tableData').dataTable({
         scrollX: true,
-        scrollY: (window.innerHeight / 1.75) + "px",
-        dom: 'PBlfrtip',
+        scrollY: '75vh',
+        scrollCollapse: true,
+        dom: 'PlBfirtp',
         processing: true,
         pagingType: "full_numbers",
         keys: true,
