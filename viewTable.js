@@ -1,7 +1,7 @@
 let prefers = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 let html = document.querySelector('html');
 html.classList.add(prefers);
-html.setAttribute('data-bs-theme', prefers);
+html.setAttribute('class', prefers);
 
 const csvFileInput = document.querySelector("#csvFileInput");
 csvFileInput.addEventListener("change", (e) => {
@@ -16,7 +16,7 @@ csvFileInput.addEventListener("change", (e) => {
 
 function htmlTableGen(content) {
     let csv_preview = document.getElementById('csvTable');
-    let html = '<table id="tableData" class="table table-condensed table-hover table-striped cell-border" style="width:100%">';
+    let html = '<table id="tableData" class="table table-condensed table-hover table-striped cell-border hover order-column stripe" style="width:100%">';
 
     if (content.length == 0 || typeof (content[0]) === 'undefined') {
         return null
