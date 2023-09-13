@@ -27,8 +27,12 @@
 </head>
 
 <body>
-    <h1 for="csvFileInput">Select a Spreadsheet file to view (.csv):</h1>
-    <input type="file" id="csvFileInput" style="padding-bottom: 25px">
+    <!-- <h1 for="csvFileInput">Select a Spreadsheet file to view (.csv):</h1> -->
+    <label for="csvFileInput" id="dropContainer">
+        <span id="dropTitle">Drop .csv files here</span>
+        or
+        <input type="file" id="csvFileInput" required>
+    </label>
     <div id="csvTable"></div>
 
     <script src="viewTable.js"></script>
