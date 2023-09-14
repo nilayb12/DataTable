@@ -39,7 +39,7 @@ body {
 }
 
 input[type=file] {
-  width: 30em;
+  width: 42.0em;
   max-width: 100%;
   color: black;
   font-weight: bold;
