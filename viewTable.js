@@ -48,7 +48,7 @@ function htmlTableGen(content) {
 }
 
 function initDataTable() {
-    $('#tableData').dataTable({
+    $('#tableData').DataTable({
         scrollX: true,
         scrollY: '75vh',
         scrollCollapse: true,
@@ -69,6 +69,14 @@ function initDataTable() {
                 text: 'Download CSV',
                 exportOptions: {
                     columns: ':visible'
+                }
+            }
+        ],
+        columnDefs: [
+            {
+                //targets: 1,
+                render: function (data, type, row, meta) {
+                    return '<a href="' + data + '">' + data + '</a>';
                 }
             }
         ]
