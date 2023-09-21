@@ -1,3 +1,5 @@
+<h1>Dynamic Datatable</h1>
+
 A JavaScript Project to view a .csv file & apply search, sort & filter to it without modifying the source file.
 Uses Datatable & PapaParse.
 
