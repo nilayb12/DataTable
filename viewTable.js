@@ -5,14 +5,18 @@ html.setAttribute('class', prefers);
 
 const csvFileInput = document.querySelector("#csvFileInput");
 csvFileInput.addEventListener("change", (e) => {
-    Papa.parse(csvFileInput.files[0], {
+    papaParse(csvFileInput.files[0])
+});
+
+function papaParse(csvFile) {
+    Papa.parse(csvFile, {
         complete: function (result) {
             if (result.data && result.data.length > 0) {
                 htmlTableGen(result.data)
             }
         }
     });
-});
+}
 
 function htmlTableGen(content) {
     let csv_preview = document.getElementById('csvTable');
