@@ -3,10 +3,31 @@ let html = document.querySelector('html');
 html.classList.add(prefers);
 html.setAttribute('class', prefers);
 
-const csvFileInput = document.querySelector("#csvFileInput");
+const csvFileInput = document.getElementById('csvFileInput');
+// document.querySelector("#csvFileInput");
 csvFileInput.addEventListener("change", (e) => {
     papaParse(csvFileInput.files[0])
 });
+
+function dropHandler(ev) {
+    ev.preventDefault();
+
+    if (ev.dataTransfer.items) {
+        [...ev.dataTransfer.items].forEach((item, i) => {
+            if (item.kind === "file") {
+                papaParse(item.getAsFile());
+            }
+        });
+    } else {
+        [...ev.dataTransfer.files].forEach((file, i) => {
+            console.log(`file[${i}].name = ${file.name}`);
+        });
+    }
+}
+
+function dragOverHandler(ev) {
+    ev.preventDefault();
+}
 
 function papaParse(csvFile) {
     Papa.parse(csvFile, {

@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <label for="csvFileInput" id="dropContainer">
+    <label for="csvFileInput" id="dropContainer" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
         <span id="dropTitle">Drop .csv files here</span>
         or
         <input type="file" id="csvFileInput" accept=".csv" required>
