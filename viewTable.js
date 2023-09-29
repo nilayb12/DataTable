@@ -87,6 +87,7 @@ function initDataTable() {
             cascadePanes: true
         },
         // responsive: true,
+        deferRender: true,
         buttons: [
             'colvis',
             {
