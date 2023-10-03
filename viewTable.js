@@ -41,7 +41,7 @@ function papaParse(csvFile) {
 
 function htmlTableGen(content) {
     let csv_preview = document.getElementById('csvTable');
-    let html = '<table id="tableData" class="table table-condensed table-hover table-striped cell-border hover order-column stripe" style="width:100%">';
+    let html = '<table id="tableData" class="table table-condensed table-hover table-striped cell-border hover order-column stripe display" style="width:100%">';
 
     if (content.length == 0 || typeof (content[0]) === 'undefined') {
         return null
@@ -66,6 +66,13 @@ function htmlTableGen(content) {
             }
         });
         html += '</tbody>';
+        html += '<tfoot>';
+        html += '<tr>';
+        header.forEach(function (colData) {
+            html += '<th>' + colData + '</th>';
+        });
+        html += '</tr>';
+        html += '</tfoot>';
         html += '</table>';
         csv_preview.innerHTML = html;
         initDataTable();
@@ -98,6 +105,21 @@ function initDataTable() {
                 }
             }
         ],
+        initComplete: function () {
+            this.api()
+                .columns()
+                .every(function () {
+                    var column = this;
+                    var title = column.footer().textContent;
+                    $('<input type="text" placeholder="Search ' + title + '" />')
+                        .appendTo($(column.footer()).empty())
+                        .on('keyup change clear', function () {
+                            if (column.search() !== this.value) {
+                                column.search(this.value).draw();
+                            }
+                        });
+                });
+        },
         columnDefs: [
             {
                 //targets: 1,
