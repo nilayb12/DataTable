@@ -1,5 +1,6 @@
 # Dynamic Datatable
 A JavaScript Project to upload & view a .csv file and apply search, sort & filter to it without modifying the source.
+Tested upto 70K Records in a single file.
 
 ## Uses:
 - [Datatable](https://datatables.net/)
