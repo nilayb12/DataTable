@@ -27,20 +27,19 @@
 </head>
 
 <body>
-    <label for="csvFileInput" id="dropContainer" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+    <label for="selectFile" id="dropContainer" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
         <span id="dropTitle">Drop .csv files here</span>
         or
-        <input type="file" id="csvFileInput" accept=".csv" required>
+        <select id="selectFile">
+            <option selected disabled>Select a File</option>
+            <?php
+            $files = glob("*.csv", GLOB_BRACE);
+            foreach ($files as $file) {
+                echo '<option value="/' . $file . '">' . $file . '</option>';
+            }
+            ?>
+        </select>
     </label>
-    <select id="selectFile">
-        <option>▒▒▒▒▒▒Select a File▒▒▒▒▒▒</option>
-        <?php
-        $files = glob("*.csv", GLOB_BRACE);
-        foreach ($files as $file) {
-            echo '<option value="/' . $file . '">' . $file . '</option>';
-        }
-        ?>
-    </select>
     <div id="csvTable"></div>
 
     <script src="viewTable.js"></script>

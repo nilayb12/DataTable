@@ -67,6 +67,26 @@ input[type=file]::file-selector-button:hover {
   background: rgb(0, 69, 0);
 }
 
+#selectFile {
+  border-color: white;
+  outline-color: white;
+  font: inherit;
+  padding: 5px;
+  background: rgb(107, 0, 169);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background .2s ease-in-out, border .2s ease-in-out, color .2s ease-in-out;
+  option {
+    color: inherit;
+  }
+}
+
+#selectFile:hover {
+  background: rgb(0, 69, 0);
+}
+
 tfoot input {
   background-color: black;
   color: white;
