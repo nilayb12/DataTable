@@ -8,4 +8,5 @@ Tested upto 70K Records in a single file.
 - [JQuery](https://jquery.com/)
 
 ### Note:
-May get stuck processing very large files (might even crash the browser with 'Out of Memory' error), if browser doesn't crash just wait until it starts responding.
+- May get stuck processing very large files (might even crash the browser with 'Out of Memory' error), if browser doesn't crash just wait until it starts responding.
+- An alternate Index file has been added that has the ability to SCAN a Directory (Working Dir by Default), LIST all Files in a DropDownList and Choose one to be Processed. Just Deploy index.php instead of index.html to see it in action.
