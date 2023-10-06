@@ -9,6 +9,14 @@ csvFileInput.addEventListener("change", (e) => {
     papaParse(csvFileInput.files[0])
 });
 
+const csvFileSelected = document.getElementById('selectFile');
+csvFileSelected.addEventListener("change", (ev) => {
+    // location.href=event.target.value;
+    $.get(ev.target.value, function (data) {
+        papaParse(data)
+    });
+});
+
 function dropHandler(ev) {
     ev.preventDefault();
 
