@@ -68,6 +68,10 @@ input[type=file]::file-selector-button:hover {
 }
 
 #selectFile {
+  position: relative;
+  display: flex;
+  width: auto;
+  text-overflow: '';
   border-color: white;
   outline-color: white;
   font: inherit;
