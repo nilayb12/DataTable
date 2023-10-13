@@ -39,6 +39,7 @@ function dragOverHandler(ev) {
 
 function papaParse(csvFile) {
     Papa.parse(csvFile, {
+        worker: true,
         complete: function (result) {
             if (result.data && result.data.length > 0) {
                 htmlTableGen(result.data)
