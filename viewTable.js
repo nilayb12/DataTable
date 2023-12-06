@@ -113,6 +113,8 @@ function initDataTable() {
             {
                 extend: 'csv',
                 text: 'Download CSV',
+                title: csvFileSelected.value.substr(folderSelected.value.length,
+                    csvFileSelected.value.length - folderSelected.value.length - 4),
                 exportOptions: {
                     columns: ':visible'
                 }
